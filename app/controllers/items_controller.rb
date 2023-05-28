@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
     # set_items
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to items_path(current_user), status: :see_other
+    redirect_to items_path(current_user), status: :see_other, notice: "Your item has been deleted!"
   end
 
   def destroy_all
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     # @items.each do |item|
     #   item.destroy
     # end
-    redirect_to items_path(current_user), status: :see_other
+    redirect_to items_path(current_user), status: :see_other, notice: "All your items have been deleted!"
   end
 
   private

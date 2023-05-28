@@ -1,1 +1,9 @@
-Shopping List
+<h1>My Shopping List</h1>
+
+<div class="main-list">
+  <% @items.each do |item| %>
+    <li><%= link_to item.name, item_path(item)  %></li>
+  <% end %>
+</div>
+
+<p><%= link_to "Add a new item", "/items/new"  %></p>
