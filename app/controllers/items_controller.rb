@@ -25,7 +25,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # set_items
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to items_path(current_user), status: :see_other, notice: "Your item has been deleted!"
