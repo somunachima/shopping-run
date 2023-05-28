@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'items/new'
-  get 'users/new'
+  # get 'items/new'
+  # get 'users/new'
+  root to: "items#index"
   devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :items
   # Defines the root path route ("/")
   # root "articles#index"
 end
