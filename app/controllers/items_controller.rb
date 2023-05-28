@@ -31,9 +31,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy_all
-    @items.each(&:destroy)
+    Item.delete_all
     # @items.each do |item|
-    #   item.destroy
+    #   item.delete
     # end
     redirect_to items_path(current_user), status: :see_other, notice: "All your items have been deleted!"
   end
