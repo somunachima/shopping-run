@@ -32,15 +32,16 @@ class ItemsController < ApplicationController
   end
 
   def destroy_all
-    @items.each do |item|
-      item.destroy
-    end
+    @items.each(&:destroy)
+    # @items.each do |item|
+    #   item.destroy
+    # end
     redirect_to items_path(current_user), status: :see_other
   end
 
   private
 
-  def set_items 
+  def set_items
     @user = current_user
   end
 
