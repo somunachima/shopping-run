@@ -1,7 +1,9 @@
 <%= form_with model: @item do |f| %>
   <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :content %>
   <%= f.text_field :content %>
   <%# <%= f.label :completed %>
   <%# <%= f.check_box :completed %>
-  <%= f.submit %>
+  <%= f.submit "Add Item" %>
 <% end %>
