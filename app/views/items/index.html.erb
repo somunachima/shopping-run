@@ -1,4 +1,5 @@
-<h1>My Shopping List</h1>
+<% if current_user %>
+<h3><%= current_user.full_name %>'s Shopping List</h3>
 
 <div class="main-list">
 <p><%= link_to "Add Item", "/items/new"  %></p>
@@ -15,6 +16,16 @@
   <% end %>
   <p class="delete-btn" style="color: #000000">
     <%= link_to "Delete All", destroy_all_items_path(@items),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete all items?"}%>
+    data: {turbo_method: :delete_all, turbo_confirm: "Are you sure you want to delete all items?"}%>
   </p>
 </div>
+
+<% else %>
+<h3>Shopping List</h3>
+
+<div class="main-list">
+<p>Please log in to view your list and add items</p>
+
+</div>
+
+<% end %>
