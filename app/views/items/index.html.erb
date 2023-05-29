@@ -2,7 +2,7 @@
 <h3><%= current_user.full_name %>'s Shopping List</h3>
 
 <div class="main-list">
-<p><%= link_to "Add Item", "/items/new"  %></p>
+<p><%= link_to "Add Item", new_item_path(@items)  %></p>
   <% @user.items.each do |item| %>
     <%# <li><%= link_to item.name, items_path(item)  %>
     <li><%= item.name %></li>
@@ -29,5 +29,4 @@
 <p>Please log in to view your list and add items</p>
 
 </div>
-
 <% end %>
