@@ -3,7 +3,7 @@
 
 <div class="main-list">
 <p><%= link_to "Add Item", "/items/new"  %></p>
-  <% @items.each do |item| %>
+  <% @user.items.each do |item| %>
     <%# <li><%= link_to item.name, items_path(item)  %>
     <li><%= item.name %></li>
     </div>
@@ -14,7 +14,7 @@
       </p>
     </div>
   <% end %>
-  <% if @items.any? %>
+  <% if @user.items.any? %>
     <p class="delete-btn" style="color: #000000">
       <%= link_to "Delete All", destroy_all_items_path(@items),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete all items?"}%>
