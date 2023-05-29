@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if current_user %>
-          <h2><%= current_user.full_name %>'s Shopping List</h2>
+          <h5>Welcome <%= current_user.full_name %></h5>
           <li class="nav-item active">
             <%= link_to "Home", "items#index", class: "nav-link" %>
           </li>

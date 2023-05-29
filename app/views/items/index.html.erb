@@ -14,10 +14,12 @@
       </p>
     </div>
   <% end %>
-  <p class="delete-btn" style="color: #000000">
-    <%= link_to "Delete All", destroy_all_items_path(@items),
-    data: {turbo_method: :delete_all, turbo_confirm: "Are you sure you want to delete all items?"}%>
-  </p>
+  <% if @items.any? %>
+    <p class="delete-btn" style="color: #000000">
+      <%= link_to "Delete All", destroy_all_items_path(@items),
+      data: {turbo_method: :delete_all, turbo_confirm: "Are you sure you want to delete all items?"}%>
+    </p>
+  <% end %>
 </div>
 
 <% else %>
