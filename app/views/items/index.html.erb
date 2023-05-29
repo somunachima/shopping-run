@@ -1,25 +1,18 @@
 <% if current_user %>
+<p style="color: green"><%= notice %></p>
 <h3><%= current_user.full_name %>'s Shopping List</h3>
 
 <div class="main-list">
-<p><%= link_to "Add Item", new_item_path(@items)  %></p>
-  <% @user.items.each do |item| %>
-    <%# <li><%= link_to item.name, items_path(item)  %>
-    <li><%= item.name %></li>
-    </div>
-      <p class="delete-btn" style="color: #000000">
-        <%= link_to "", item_path(item),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this item?"},
-        class:"fa-solid fa-trash"%>
-      </p>
-    </div>
-  <% end %>
-  <% if @user.items.any? %>
-    <p class="delete-btn" style="color: #000000">
-      <%= link_to "Delete All", destroy_all_items_path(@items),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete all items?"}%>
-    </p>
-  <% end %>
+<p><%= link_to "Add Item", new_item_path(@items), "data-controller": "turbo"  %></p>
+<% @user.items.each do |item| %>
+  <%= render item %>
+<% end %>
+<% if @user.items.any? %>
+  <p class="delete-btn" style="color: #000000">
+    <%= link_to "Delete All", destroy_all_items_path(@items),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete all items?"}%>
+  </p>
+<% end %>
 </div>
 
 <% else %>

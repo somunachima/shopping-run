@@ -1,9 +1,15 @@
-<%= form_with(model: @item) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%# <%= f.label :completed %>
-  <%# <%= f.check_box :completed %>
-  <%= f.submit "Add Item" %>
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal">
+    <div class="modal-inner">
+      <div>
+        <%= link_to "𝗫", "#", data: {
+            controller: "modals",
+            action: "modals#close"
+        },  class: "cancel-btn" %>
+      </div>
+      <h1>New Item</h1>
+      <%= render "items/form_modal", item: @item %>
+      <br>
+    </div>
+  </div>
 <% end %>
