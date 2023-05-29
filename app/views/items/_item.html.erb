@@ -1,0 +1,9 @@
+<%# <li><%= link_to item.name, items_path(item)  %>
+<li><%= item.name %></li>
+</div>
+  <p class="delete-btn" style="color: #000000">
+    <%= link_to "", item_path(item),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this item?"},
+    class:"fa-solid fa-trash"%>
+  </p>
+</div>
