@@ -1,8 +1,8 @@
-<%= turbo_frame_tag "modal" do %>
+<%= turbo_frame_tag "modal", target: :_top do %>
   <div class="modal">
     <div class="modal-inner">
       <div>
-        <%= link_to "𝗫", "#", data: {
+        <%= link_to "𝗫", items_path, data: {
             controller: "modals",
             action: "modals#close"
         },  class: "cancel-btn" %>

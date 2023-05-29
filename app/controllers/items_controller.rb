@@ -10,10 +10,17 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    if @item.save
-      redirect_to items_path(current_user), notice: "Your item has been added!"
-    else
-      render template: "items/index", status: :unprocessable_entity
+
+    respond_to do |format|
+      if @item.save
+        # redirect_to items_path(current_user), notice: "Your item has been added!"
+        format.html { redirect_to items_path(current_user), notice: "Your item has been added!" }
+        format.json { render :show, status: :created, location: @item }
+      else
+        # render template: "items/index", status: :unprocessable_entity
+        format.html { render "items/index", status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -28,7 +35,11 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to items_path(current_user), status: :see_other, notice: "Your item has been deleted!"
+    # redirect_to items_path(current_user), status: :see_other, notice: "Your item has been deleted!"
+    respond_to do |format|
+      format.html { redirect_to items_path(current_user), notice: "Post was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   def destroy_all
