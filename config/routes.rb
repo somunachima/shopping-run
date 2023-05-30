@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       get 'destroy_all'
     end
   end
+
+  patch 'drag/project'
   # Defines the root path route ("/")
   # root "articles#index"
 end
