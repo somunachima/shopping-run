@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_items, only: [:new, :create, :index, :show, :destroy_all]
+  before_action :set_items, only: [:new, :create, :index, :show, :update, :destroy_all]
   before_action :authenticate_user!
 
   def new
@@ -25,11 +25,32 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @items = Item.all.includes([:rich_text_body]).order(position: :asc)
   end
 
   def show
     @item = Item.find(params[:id])
+  end
+
+  def edit
+    @item = Item.where(current_user.booking.id)
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.user = current_user
+
+    respond_to do |format|
+      if @item.update(item_params)
+        # redirect_to items_path(current_user), notice: "Your item has been added!"
+        format.html { redirect_to items_path(current_user), notice: "Your item has been updated!" }
+        format.json { render :show, status: :created, location: @item }
+      else
+        # render template: "items/index", status: :unprocessable_entity
+        format.html { render "items/index", status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
