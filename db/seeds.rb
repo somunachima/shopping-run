@@ -6,5 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Items.create(name: Faker::Commerce.product_name, description: Faker::Commerce.brand)
-Items.create(name: Faker::Food.ingredient, description: Faker::Food.description)
+10.times do |x|
+  Item.create(name: Faker::Commerce.product_name, content: Faker::Commerce.brand)
+  Item.create(name: Faker::Food.ingredient, content: Faker::Food.description)
+  Item.create(name: Faker::Food.dish, content: Faker::Food.description)
+  Item.create(name: Faker::Food.fruits, content: Faker::Food.description)
+  Item.create(name: Faker::Food.spice, content: Faker::Food.description)
+  Item.create(name: Faker::Food.vegetables, content: Faker::Food.description)
+end
