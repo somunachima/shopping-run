@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/index'
   # get 'items/new'
   # get 'users/new'
   root to: "items#index"

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CollectionsController from "./collections_controller"
+application.register("collections", CollectionsController)
+
 import DragController from "./drag_controller"
 application.register("drag", DragController)
 
@@ -12,5 +15,3 @@ application.register("hello", HelloController)
 
 import ModalsController from "./modals_controller"
 application.register("modals", ModalsController)
-
-

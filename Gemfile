@@ -36,6 +36,8 @@ gem "jbuilder"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
+gem 'faker'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
@@ -84,3 +86,6 @@ end
 
 gem "acts_as_list", "~> 1.1"
 gem "inline_svg"
+
+gem "ransack", "~> 4.0"
+gem "pg_search"

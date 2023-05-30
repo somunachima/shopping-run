@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    # @user = current_user
     @item = Item.new
   end
 
@@ -13,11 +12,9 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        # redirect_to items_path(current_user), notice: "Your item has been added!"
         format.html { redirect_to items_path(current_user), notice: "Your item has been added!" }
         format.json { render :show, status: :created, location: @item }
       else
-        # render template: "items/index", status: :unprocessable_entity
         format.html { render "items/index", status: :unprocessable_entity }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -25,7 +22,12 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all.includes([:rich_text_body]).order(position: :asc)
+    if params[:query].present?
+      @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
+      # @items = Item.search_name(params[:query])
+    else
+      @items = Item.all.order(position: :asc)
+    end
   end
 
   def show
@@ -42,11 +44,9 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update(item_params)
-        # redirect_to items_path(current_user), notice: "Your item has been added!"
         format.html { redirect_to items_path(current_user), notice: "Your item has been updated!" }
         format.json { render :show, status: :created, location: @item }
       else
-        # render template: "items/index", status: :unprocessable_entity
         format.html { render "items/index", status: :unprocessable_entity }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -56,9 +56,8 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    # redirect_to items_path(current_user), status: :see_other, notice: "Your item has been deleted!"
     respond_to do |format|
-      format.html { redirect_to items_path(current_user), notice: "Post was successfully destroyed." }
+      format.html { redirect_to items_path(current_user), notice: "Your item has been deleted!" }
       format.json { head :no_content }
     end
   end

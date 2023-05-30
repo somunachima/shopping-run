@@ -7,4 +7,11 @@ class Item < ApplicationRecord
   validates :name, presence: { message: 'Must enter item name' }
   # validates :name, uniqueness: { case_sensitive: false, message: 'Item already exists' }
 
+  # include PgSearch::Model
+  # pg_search_scope :search_by_name,
+  #   against: [ :name ],
+  #   using: {
+  #     tsearch: { prefix: true, any_word: true, dictionary: "english" }
+  #   }
+
 end
