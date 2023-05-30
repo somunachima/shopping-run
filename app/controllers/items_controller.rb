@@ -25,7 +25,11 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all.includes([:rich_text_body]).order(position: :asc)
+    if params[:query].present?
+      @items = Item.search_by_name(params[:query])
+    else
+      @items = Item.all.includes([:rich_text_body]).order(position: :asc)
+    end
   end
 
   def show
