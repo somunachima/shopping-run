@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   patch 'drag/project'
 
-  resources :bookmarks, only: [:create, :destroy]
+  resources :bookmarks, only: [:index, :create, :destroy]
+
+  get "dashboard", to: "users#dashboard", as: "dashboard"
   # Defines the root path route ("/")
   # root "articles#index"
 end

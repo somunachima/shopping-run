@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:new, :create, :destroy]
+  before_action :set_bookmark, only: [:index, :new, :create, :destroy]
   def create
     @bookmark = current_user.bookmarks.new(bookmark_params)
     if !@bookmark.save
@@ -14,6 +14,10 @@ class BookmarksController < ApplicationController
     @item = @bookmark.item
     @bookmark.destroy
     redirect_to items_path
+  end
+
+  def index
+    @bookmarks = Bookmark.all
   end
 
   private
