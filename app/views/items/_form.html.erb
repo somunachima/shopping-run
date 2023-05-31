@@ -1,0 +1,9 @@
+<%= form_with(model: @item) do |f| %>
+  <div>
+    <%= f.text_field :name, required: true, class: "new-bar", placeholder: "Add a new item", style: "width:100%; color:#616264" %>
+  </div>
+
+  <div>
+    <%= f.submit "", class: "add-btn", style: "display:none" %>
+  </div>
+<% end %>

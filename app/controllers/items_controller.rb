@@ -1,10 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:new, :create, :index, :show, :edit, :update, :destroy, :destroy_all]
+  before_action :set_item, only: [:create, :index, :show, :edit, :update, :destroy, :destroy_all]
   before_action :authenticate_user!
-
-  def new
-    @item = Item.new
-  end
 
   def create
     @item = Item.new(item_params)
@@ -22,33 +18,11 @@ class ItemsController < ApplicationController
   end
 
   def index
+    @item = Item.new
     if params[:query].present?
       @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @items = Item.all
-    end
-  end
-
-  def show
-    @item = Item.find(params[:id])
-  end
-
-  def edit
-    @item = Item.where(current_user.item.id)
-  end
-
-  def update
-    @item = Item.find(params[:id])
-    @item.user = current_user
-
-    respond_to do |format|
-      if @item.update(item_params)
-        format.html { redirect_to items_path(current_user), notice: "Your item has been updated!" }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render "items/index", status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
     end
   end
 
@@ -76,6 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :content, :user_id)
+    params.require(:item).permit(:name, :user_id)
   end
 end

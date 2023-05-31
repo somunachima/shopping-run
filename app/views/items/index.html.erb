@@ -3,20 +3,22 @@
     <h3>Your Shopping List</h3>
     <h3 class="items-no"><%= current_user.items.length %><i class="fa-solid fa-bag-shopping"></i></h3>
   </div>
+
   <div class="top">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
     <%= render "items/search" %>
-
-    <div>
-      <p class="add-btn"><%= link_to "+ New item", new_item_path, data: { turbo_frame: "modal" } %></p>
-    </div>
-
   </div>
 
-    <div id="item-card">
-      <% @items.each do |item| %>
-          <%= render "items/draggable", item: item %>
-      <% end %>
-    </div>
+  <div class="new-top">
+    <i class="fa-solid fa-plus add-icon"></i>
+    <%= render "items/form" %>
+  </div>
+
+  <div id="item-card">
+    <% @items.each do |item| %>
+      <%= render "items/draggable", item: item %>
+    <% end %>
+  </div>
 
   <div class="delete-all">
     <% if current_user.items.any? %>
@@ -25,7 +27,7 @@
         data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete all items?"}%>
       </p>
     <% else %>
-      <h5>Welcome <%= current_user.full_name %>!</h5>
+      <span class="greeting"><h5>Welcome <%= current_user.full_name %>!</h5></span>
       <div>
         <p>Please add items to your shopping list</p>
         <p style="color: green"><%= notice %></p>
