@@ -53,39 +53,6 @@ html, body {
   margin-bottom: 25px;
 }
 
-.item-name {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-}
-
-.item-details {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 10px;
-  margin-bottom: 2px;
-  background-color: #F0F0EF;
-  border-radius: 0.2rem;
-  min-height: 25px;
-  width: 100%;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.item-details:hover {
-  background-color: #E7F0FE;
-  border-left: 3px solid #1B73E9;
-  color: #1B73E9;
-  transform: scale(1.01);
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-
-  .fa-solid {
-    color: #1B73E9;
-  }
-}
-
 .add-btn {
   display: flex;
   justify-content: center;

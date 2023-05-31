@@ -3,17 +3,18 @@
   <div class="item-name">
     <% bookmark = current_user.bookmarks.find_by(item: item) %>
     <% if current_user.bookmarks.find_by(item: item).nil? %>
-      <form action="/bookmarks" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="bookmark[item_id]" value="<%= item.id %>">
-        <input type="submit" value="Save">
-      </form>
+      <div class="save-btn">
+        <%= button_to "", bookmarks_path,
+        params: { bookmark: { item_id: item.id }},
+        method: :post,
+        class:"fa-regular fa-bookmark"%>
+      </div>
     <% else %>
-      <form action="<%= bookmark_path(bookmark) %>" method="delete">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Unsave">
-      </form>
+      <div class="save-btn">
+        <%= button_to "", bookmark_path(bookmark),
+        method: :delete,
+        class:"fa-solid fa-bookmark"%>
+      </div>
     <% end %>
     <%= item.name %>
   </div>
