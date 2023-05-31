@@ -13,7 +13,7 @@ class BookmarksController < ApplicationController
     @bookmark = current_user.bookmark.find(params[:id])
     @item = @bookmark.item
     @bookmark.destroy
-    redirect_to items_path
+    redirect_to item
   end
 
   private
