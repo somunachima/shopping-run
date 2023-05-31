@@ -19,6 +19,8 @@ class ItemsController < ApplicationController
 
   def index
     @item = Item.new
+    @item.user = current_user
+    @item.save
     if params[:query].present?
       @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
     else
