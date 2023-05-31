@@ -15,3 +15,4 @@ application.register("hello", HelloController)
 
 import ModalsController from "./modals_controller"
 application.register("modals", ModalsController)
+
