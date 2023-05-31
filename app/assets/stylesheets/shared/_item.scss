@@ -136,11 +136,15 @@ z-index: 1;
   transform: scale(1.02);
 }
 
+.greeting {
+  margin-top: 20px;
+}
+
 .delete-all {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0px auto;
   max-width: 900px;
   text-align: center;
 }

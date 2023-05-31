@@ -27,7 +27,7 @@
         data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete all items?"}%>
       </p>
     <% else %>
-      <h5>Welcome <%= current_user.full_name %>!</h5>
+      <span class="greeting"><h5>Welcome <%= current_user.full_name %>!</h5></span>
       <div>
         <p>Please add items to your shopping list</p>
         <p style="color: green"><%= notice %></p>
