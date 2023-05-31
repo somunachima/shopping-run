@@ -22,6 +22,8 @@ html, body {
 .items-no {
   margin-right: 10px;
   color: #353536;
+  display: flex;
+  align-items: center;
 
   .fa-solid.fa-bag-shopping {
     font-size: 24px;
