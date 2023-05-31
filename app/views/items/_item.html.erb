@@ -1,5 +1,10 @@
 <%# <li><%= link_to item.name, items_path(item)  %>
  <div class="item-details">
+  <form action="/bookmarks" method="items">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" id="">
+    <input type="submit" value="Bookmark">
+  </form>
   <div class="item-name">
     <%= item.name %>
   </div>

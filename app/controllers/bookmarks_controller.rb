@@ -1,20 +1,19 @@
 class BookmarksController < ApplicationController
-  before_action :set_items, only: [:new, :create]
-  def new
-    @bookmark = Bookmark.new
-  end
-
   def create
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.user = current_user
+    @bookmark = current_user.bookmark.new(bookmark_params)
 
     if !bookmark.save
       flash[:notice] = @bookmark
     end
+
+    redirect_to items_path(current_user)
   end
 
   def destroy
-
+    @bookmark = current_user.bookmark.find(params[:id])
+    @item = @bookmark.item
+    @bookmark.destroy
+    redirect_to items_path
   end
 
   private
