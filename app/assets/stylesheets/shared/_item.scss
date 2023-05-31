@@ -40,7 +40,25 @@ html, body {
   border-radius: 1rem;
   color: #6D747E;
   padding-left: 0px;
-  text-indent: 15px;
+  text-indent: 35px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.search-icon {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  color: #6A696A;
+  padding-left: 15px;
+  padding-top: 12px;
+}
+.form__input {
+
+}
+.search-bar:placeholder-shown {
+  z-index: 1;
 }
 
 .search-btn {
