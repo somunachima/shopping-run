@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   end
 
   patch 'drag/project'
+
+  resources :bookmarks, only: [:create, :destroy]
   # Defines the root path route ("/")
   # root "articles#index"
 end

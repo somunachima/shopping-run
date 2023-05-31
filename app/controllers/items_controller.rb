@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   def index
     if params[:query].present?
       @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
-      # @items = Item.search_name(params[:query])
     else
       @items = Item.all.order(position: :asc)
     end
@@ -35,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.where(current_user.booking.id)
+    @item = Item.where(current_user.item.id)
   end
 
   def update
