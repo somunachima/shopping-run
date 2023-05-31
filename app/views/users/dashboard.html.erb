@@ -1,12 +1,25 @@
-<%= turbo_frame_tag "modal" do %>
-  <div class="container-index">
-    <div class="header">
-      <h3>Your Saved Items</h3>
-      <h3 class="items-no"><%= current_user.bookmarks.length %><i class="fa-solid fa-bag-shopping"></i></h3>
-    </div>
-      <div id="item-card">
-        <%= render "users/bookmark" %>
+<div class="container-index">
+
+  <div class="header">
+    <h3>Your Saved Items</h3>
+    <h3 class="items-no"><%= current_user.bookmarks.length %><i class="fa-solid fa-bag-shopping"></i></h3>
+  </div>
+
+  <div id="item-card">
+    <%= render "users/bookmark" %>
+  </div>
+
+  <div class="delete-all">
+    <% if current_user.bookmarks.any? %>
+    <% else %>
+      <h5>Welcome <%= current_user.full_name %>!</h5>
+      <div>
+        <p>Please save items in your shopping list</p>
+        <p style="color: green"><%= notice %></p>
       </div>
-  <%= turbo_page_requires_reload %>
-<% end %>
+      </div>
+        <%= image_tag asset_path('vid.gif'), controls: false, autoplay: :autoplay, loop: :loop, :class => "video" %>
+      </div>
+    <% end %>
+  </div>
 </div>
