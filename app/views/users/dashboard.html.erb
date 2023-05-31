@@ -11,6 +11,10 @@
 
   <div class="delete-all">
     <% if current_user.bookmarks.any? %>
+       <p class="delete-all-btn" style="color: #000000">
+        <%= link_to "Unsave all items", destroy_all_bookmarks_path(current_user),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unsave all items?"}%>
+      </p>
     <% else %>
       <h5>Welcome <%= current_user.full_name %>!</h5>
       <div>

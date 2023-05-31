@@ -17,7 +17,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy_all
-    Bookmark.delete_all
+    @bookmarks = Bookmark.all
+    @bookmarks.each do |bookmark|
+      bookmark.destroy
+    end
     redirect_to items_path(current_user), status: :see_other, notice: "All your items have been deleted!"
   end
 
