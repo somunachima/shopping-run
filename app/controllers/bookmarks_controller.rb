@@ -6,7 +6,7 @@ class BookmarksController < ApplicationController
       flash[:notice] = @bookmark
     end
 
-    redirect_to items_path(current_user)
+    redirect_to @bookmark.item
   end
 
   def destroy
