@@ -6,14 +6,14 @@ class BookmarksController < ApplicationController
       flash[:notice] = @bookmark
     end
 
-    redirect_to @bookmark.item
+    redirect_to items_path
   end
 
   def destroy
-    @bookmark = current_user.bookmark.find(params[:id])
+    @bookmark = current_user.bookmarks.find(params[:id])
     @item = @bookmark.item
     @bookmark.destroy
-    redirect_to item
+    redirect_to items_path
   end
 
   private

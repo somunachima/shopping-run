@@ -1,14 +1,19 @@
 <%# <li><%= link_to item.name, items_path(item)  %>
  <div class="item-details">
   <div class="item-name">
+    <% bookmark = current_user.bookmarks.find_by(item: item) %>
     <% if current_user.bookmarks.find_by(item: item).nil? %>
-      <form action="/bookmarks" method="items">
+      <form action="/bookmarks" method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="bookmark[item_id]" value="<%= item.id %>">
         <input type="submit" value="Save">
       </form>
     <% else %>
-      <p>unsave</p>
+      <form action="<%= bookmark_path(bookmark) %>" method="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Unsave">
+      </form>
     <% end %>
     <%= item.name %>
   </div>
