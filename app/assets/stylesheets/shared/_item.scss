@@ -16,14 +16,17 @@ html, body {
   display: flex;
   justify-content: space-between;
   min-height: 48px;
+  color: #353536;
 }
 
 .items-no {
   margin-right: 10px;
+  color: #353536;
 
   .fa-solid.fa-bag-shopping {
     font-size: 24px;
     padding-left: 5px;
+    color: #353536;
   }
 }
 
