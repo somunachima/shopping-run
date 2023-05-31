@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_items, only: [:new, :create, :index, :show, :edit, :update, :destroy, :destroy_all]
+  before_action :set_item, only: [:new, :create, :index, :show, :edit, :update, :destroy, :destroy_all]
   before_action :authenticate_user!
 
   def new
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     if params[:query].present?
       @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @items = Item.all.order(position: :asc)
+      @items = Item.all
     end
   end
 
@@ -68,7 +68,7 @@ class ItemsController < ApplicationController
 
   private
 
-  def set_items
+  def set_item
     @user = current_user
   end
 
