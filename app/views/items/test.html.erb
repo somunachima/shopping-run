@@ -1,97 +1,10 @@
-  <div class="next-booking">
-    <h3 id="dashboard-subs-booking"><strong>Bookings</strong></h3>
-    <div class="bookings-card">
-      <% if current_user.admin %>
-      <div class="admin-card">
-          <% @users.each do |user| %>
-
-            <%= user.title %> <%= user.full_name %>
-            <%= user.address %>
-
-            <% user.bookings.each do |booking| %>
-            <h6> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h6><br>
-            <strong><%= booking.timeslot.exam.clinic.name %></strong>
-            <%= booking.timeslot.exam.clinic.address %> <br>
-            <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-            <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
-
-              <%= simple_form_for [booking] do |f| %>
-              <%= f.check_box :confirmed %>
-              <%= f.submit "Submit" %>
-              <% end %>
-
-              <%= link_to "Add Result", new_booking_result_path(booking) %>
-              <p style="color: #000000"><%= link_to "", booking_path(booking),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                  class:"fa-solid fa-trash"%>
-              </p>
-
-              <div class="result-bookings">
-                  <div><h6 style="color: #515AE9;"><strong><%= link_to "View Results", booking_results_path(booking) %></strong></h6>
-                  </div>
-              </div>
-
-              <h6 style="color: #5354F2"><strong>Message Patient</strong> <%= link_to " ", booking_chatroom_path(booking, booking.chatroom.id),class:"fa-solid fa-envelope" %>
-
-            <% end %>
-          <% end %>
-      </div>
-
-        <% else %>
-          <div class="user-card">
-            <% current_user.bookings.each do |booking| %>
-              <div class="upcoming-bookings">
-
-
-                <div class="scan-header">
-                  <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5>
-                </div>
-
-                <div class="booking-content">
-                  <div class="booking-left">
-                    <div class="clinic-info-booking">
-                      <strong><%= booking.timeslot.exam.clinic.name %></strong><br>
-                      <%= booking.timeslot.exam.clinic.address %> <br>
-                      <strong>Date:</strong> <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-                      <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
-                    </div><br>
-
-                    <div class="booking-status">
-                    <strong>Booking Status:</strong>
-                    <% if booking.confirmed == true %>
-                      <h6 style="color: green;">Booking Confirmed by the Clinic!</h6><br>
-                    <% else %>
-                      <h6 style="color: #EA9B0F;">Booking Confirmation is Pending. Please wait for the clinic to confirm.</h6><br>
-                    <% end %>
-                    </div>
-
-                  </div>
-
-                  <div class="booking-right">
-                    <div class="result-bookings">
-                      <% if booking.results.present? %>
-                        <button class="result-btn" style="text-decoration-none" type="submit"><%= link_to("Your Results", booking_results_path(booking)) %></button>
-                      <% end %>
-                    </div>
-
-                    <div class="message-clinic">
-                      <button class="message-btn" style="text-decoration-none" type="submit"><%= link_to("Message Clinic", booking_chatroom_path(booking, booking.chatroom.id)) %></button>
-                    </div>
-
-                  </div>
-
-                  </div>
-                    <p class="delete-button" style="color: #000000"><%= link_to "", booking_path(booking),
-                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                      class:"fa-solid fa-trash"%>
-                    </p>
-                  </div>
-                </div>
-
-
-            <% end %>
-          </div>
-
-        <% end %>
-    </div>
-  </div>
+      <form action="/bookmarks" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="bookmark[item_id]" value="<%= item.id %>">
+        <input type="submit" value="Save">
+      </form>
+      <form action="<%= bookmark_path(bookmark) %>" method="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Unsave">
+      </form>

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_items, only: [:new, :create, :index, :show, :update, :destroy_all]
+  before_action :set_item, only: [:new, :create, :index, :show, :edit, :update, :destroy, :destroy_all]
   before_action :authenticate_user!
 
   def new
@@ -24,9 +24,8 @@ class ItemsController < ApplicationController
   def index
     if params[:query].present?
       @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
-      # @items = Item.search_name(params[:query])
     else
-      @items = Item.all.order(position: :asc)
+      @items = Item.all
     end
   end
 
@@ -35,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.where(current_user.booking.id)
+    @item = Item.where(current_user.item.id)
   end
 
   def update
@@ -63,13 +62,16 @@ class ItemsController < ApplicationController
   end
 
   def destroy_all
-    Item.delete_all
+    @items = Item.all
+    @items.each do |item|
+      item.destroy
+    end
     redirect_to items_path(current_user), status: :see_other, notice: "All your items have been deleted!"
   end
 
   private
 
-  def set_items
+  def set_item
     @user = current_user
   end
 
