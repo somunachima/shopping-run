@@ -2,36 +2,45 @@
   <div class="modal">
     <div class="modal-inner">
       <div>
-        <%= link_to "𝗫", items_path, data: {
+        <%= link_to "", items_path, data: {
             controller: "modals",
             action: "modals#close"
         },  class: "cancel-btn" %>
       </div>
-      <h2>Sign up</h2>
+      <div class="welcome-google">
+        <%= image_tag asset_path("google.png"), class: "welcome-icon" %>
+        <p><strong>Welcome to Google Shopping List</strong></p>
+      </div>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
+        <div class="form-inputs google">
           <%= f.input :email,
                       required: true,
+                      label: false,
+                      placeholder: "Email",
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
           <%= f.input :password,
                       required: true,
+                      label: false,
+                      placeholder: "Password",
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
                       required: true,
+                      label: false,
+                      placeholder: "Confirm Password",
                       input_html: { autocomplete: "new-password" } %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", class: "sign-btn" %>
         </div>
       <% end %>
         <div>
-        <p><strong>Already have an account?</strong><br><%= render "devise/shared/links" %></p>
+        <p class="question"><strong>Already have an account?</strong><br><%= render "devise/shared/links" %></p>
         </div>
     </div>
   </div>
