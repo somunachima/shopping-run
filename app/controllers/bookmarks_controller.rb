@@ -17,7 +17,7 @@ class BookmarksController < ApplicationController
   end
 
   def destroy_all
-    @bookmarks = current_user.bookmarks.all
+    @bookmarks = Bookmark.all
     @bookmarks.each do |bookmark|
       bookmark.destroy
     end

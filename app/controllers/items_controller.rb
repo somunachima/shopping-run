@@ -19,8 +19,6 @@ class ItemsController < ApplicationController
 
   def index
     @item = Item.new
-    @item.user = current_user
-    @item.save
     if params[:query].present?
       @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
     else
@@ -29,7 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = current_user.items.find(params[:id])
+    @item = Item.find(params[:id])
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_path(current_user), notice: "Your item has been deleted!" }
@@ -38,7 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy_all
-    @items = current_user.items.all
+    @items = Item.all
     @items.each do |item|
       item.destroy
     end
