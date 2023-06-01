@@ -15,7 +15,7 @@
   </div>
 
   <div id="item-card">
-    <% current_user.items.each do |item| %>
+    <% @items.each do |item| %>
       <%= render "items/draggable", item: item %>
     <% end %>
   </div>
