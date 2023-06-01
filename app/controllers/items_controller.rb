@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_path(current_user), notice: "Your item has been deleted!" }
@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy_all
-    @items = Item.all
+    @items = current_user.items.all
     @items.each do |item|
       item.destroy
     end
