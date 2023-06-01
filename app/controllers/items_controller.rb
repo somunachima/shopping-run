@@ -1,30 +1,40 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:create, :index, :destroy, :destroy_all]
+  before_action :set_item, only: [:create, :index, :show, :edit, :update, :destroy, :destroy_all]
   before_action :authenticate_user!
 
   def create
     @item = current_user.items.new(item_params)
-
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to items_path(current_user), notice: "Your item has been added!" }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render "items/index", status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+      if !@item.save
+        flash[:notice] = @item
       end
-    end
+    redirect_to items_path, status: :see_other, notice: "Your item has been added!"
   end
 
   def index
     @item = Item.new
     if params[:query].present?
-      @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
+      @items = current_user.items.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @items = Item.all
+      @items = current_user.items.all.order(position: :asc)
     end
-    @item.user = current_user
-    @item.save
+  end
+
+  def show
+    @item = current_user.items.find(params[:id])
+    @bookmark = Bookmark.find(params[:bookmark_id])
+  end
+
+  def edit
+    @item = Item.where(current_user.item.id)
+  end
+
+  def update
+    @item = current_user.items.find(params[:id])
+
+    if !@item.update(item_params)
+      flash[:notice] = @item
+    end
+    redirect_to items_path, status: :see_other, notice: "Your item has been updated!"
   end
 
   def destroy
