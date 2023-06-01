@@ -2,36 +2,40 @@
   <div class="modal">
     <div class="modal-inner">
       <div>
-        <%= link_to "𝗫", items_path, data: {
+        <%= link_to "", items_path, data: {
             controller: "modals",
             action: "modals#close"
         },  class: "cancel-btn" %>
       </div>
 
       <div class="welcome-google">
-        <%= image_tag asset_path("google.png") %>
-        <h5>Welcome to Google Shopping List</h5>
+        <%= image_tag asset_path("google.png"), class: "welcome-icon" %>
+        <p><strong>Welcome to Google Shopping List</strong></p>
       </div>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
+        <div class="form-inputs google">
           <%= f.input :email,
                       required: false,
                       autofocus: true,
+                      label: false,
+                      placeholder: "Email",
                       input_html: { autocomplete: "email" } %>
           <%= f.input :password,
                       required: false,
+                      label: false,
+                      placeholder: "Password",
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Log in", class: "log-btn" %>
         </div>
       <% end %>
-      <div>
+
         <%= render "devise/shared/links" %>
-      </div>
+
     </div>
   </div>
 <% end %>
