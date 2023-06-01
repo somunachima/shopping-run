@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'search/index'
-  # get 'items/new'
-  # get 'users/new'
   root to: "items#index"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -10,7 +7,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :items, only: [:new, :index]
+  resources :items, only: [:index, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :items do
     collection do

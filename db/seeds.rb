@@ -5,16 +5,3 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
-# Item.destroy_all
-
-#   User.create!(full_name: Faker::Commerce.brand, email: )
-
-# 10.times do |x|
-#   Item.create!(name: Faker::Commerce.product_name, content: Faker::Commerce.brand)
-#   Item.create!(name: Faker::Food.ingredient, content: Faker::Food.description)
-#   Item.create!(name: Faker::Food.dish, content: Faker::Food.description)
-#   Item.create!(name: Faker::Food.fruits, content: Faker::Food.description)
-#   Item.create!(name: Faker::Food.spice, content: Faker::Food.description)
-#   Item.create!(name: Faker::Food.vegetables, content: Faker::Food.description)
-# end

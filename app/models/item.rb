@@ -5,8 +5,8 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
 
-  validates :name, presence: { message: 'Must enter item name' }
-  validates :name, uniqueness: { case_sensitive: false, message: 'Item already exists' }
+  validates :name, presence: { message: 'Please enter item name' }
+  validates :name, uniqueness: { scope: :user_id, case_sensitive: false, message: 'Item already added' }
 
 
   # include PgSearch::Model

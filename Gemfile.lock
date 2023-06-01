@@ -112,8 +112,6 @@ GEM
       railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.8.1)
-    faker (3.2.0)
-      i18n (>= 1.8.11, < 2)
     faraday (2.7.5)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -126,9 +124,6 @@ GEM
     hashie (5.0.0)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
-    inline_svg (1.9.0)
-      activesupport (>= 3.0)
-      nokogiri (>= 1.6)
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
@@ -191,9 +186,6 @@ GEM
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
     pg (1.5.3)
-    pg_search (2.3.6)
-      activerecord (>= 5.2)
-      activesupport (>= 5.2)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -231,10 +223,6 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    ransack (4.0.0)
-      activerecord (>= 6.1.5)
-      activesupport (>= 6.1.5)
-      i18n
     regexp_parser (2.8.0)
     reline (0.3.4)
       io-console (~> 0.5)
@@ -309,19 +297,15 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
-  faker
   font-awesome-sass (~> 6.1)
-  inline_svg
   jbuilder
   jsbundling-rails
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0)
   pg (~> 1.1)
-  pg_search
   puma (~> 5.0)
-  rails (~> 7.0.4, >= 7.0.4.2)
-  ransack (~> 4.0)
+  rails (~> 7.0.5)
   sassc-rails
   selenium-webdriver
   simple_form!

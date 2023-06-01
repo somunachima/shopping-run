@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:index, :new, :create, :destroy, :destroy_all]
+  before_action :set_bookmark, only: [:index, :create, :destroy, :destroy_all]
   def create
     @bookmark = current_user.bookmarks.new(bookmark_params)
     if !@bookmark.save
@@ -13,15 +13,15 @@ class BookmarksController < ApplicationController
     @bookmark = current_user.bookmarks.find(params[:id])
     @item = @bookmark.item
     @bookmark.destroy
-    redirect_to items_path
+    redirect_to items_path, status: :see_other, notice: "Your item has been unsaved!"
   end
 
   def destroy_all
-    @bookmarks = Bookmark.all
+    @bookmarks = current_user.bookmarks.all
     @bookmarks.each do |bookmark|
       bookmark.destroy
     end
-    redirect_to items_path(current_user), status: :see_other, notice: "All your items have been deleted!"
+    redirect_to items_path(current_user), status: :see_other, notice: "All your saved items have been unsaved!"
   end
 
   def index

@@ -1,10 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:create, :index, :show, :edit, :update, :destroy, :destroy_all]
+  before_action :set_item, only: [:create, :index, :destroy, :destroy_all]
   before_action :authenticate_user!
 
   def create
-    @item = Item.new(item_params)
-    @item.user = current_user
+    @item = current_user.items.new(item_params)
 
     respond_to do |format|
       if @item.save
@@ -24,19 +23,18 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+    @item.user = current_user
+    @item.save
   end
 
   def destroy
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
     @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_path(current_user), notice: "Your item has been deleted!" }
-      format.json { head :no_content }
-    end
+    redirect_to items_path(current_user), status: :see_other, notice: "Your item has been deleted!"
   end
 
   def destroy_all
-    @items = Item.all
+    @items = current_user.items.all
     @items.each do |item|
       item.destroy
     end
