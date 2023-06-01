@@ -1,10 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:create, :index, :update, :destroy, :destroy_all]
+  before_action :set_item, only: [:create, :index, :show, :edit, :update, :destroy, :destroy_all]
   before_action :authenticate_user!
-
-  def new
-    @item = Item.new
-  end
 
   def create
     @item = current_user.items.new(item_params)
@@ -16,11 +12,8 @@ class ItemsController < ApplicationController
 
   def index
     @item = Item.new
-    @item.user = current_user
-    @item.save
-    @items = current_user.items.all
     if params[:query].present?
-      @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
+      @items = current_user.items.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @items = current_user.items.all.order(position: :asc)
     end
