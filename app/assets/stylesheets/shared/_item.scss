@@ -20,14 +20,14 @@ html, body {
 }
 
 .items-no {
-  margin-right: 10px;
   color: #353536;
   display: flex;
   align-items: center;
+  padding-right: 5px;
 
   .fa-solid.fa-bag-shopping {
     font-size: 24px;
-    padding-left: 5px;
+    padding-right: 5px;
     color: #353536;
   }
 }
