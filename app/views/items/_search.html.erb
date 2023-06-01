@@ -2,10 +2,7 @@
   <%= text_field_tag :query,
     params[:query],
     class: "form-control search-bar",
-    style: "font-family: append($font-family-sans-serif, 	Font Awesome 5 Free, Noto Sans;  font-weight: 900;",
-    placeholder: "Search list",
-    type: "text"
+    placeholder: "Search shopping list"
   %>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <%= submit_tag "", class: "search-btn" %>
 <% end %>

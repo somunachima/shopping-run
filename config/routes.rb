@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :items, only: [:index, :create, :destroy]
+  resources :items, only: [:new, :index, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :items do
     collection do
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  patch 'drag/project'
+  patch 'drag/item'
 
   resources :bookmarks, only: [:index, :create, :destroy]
 
