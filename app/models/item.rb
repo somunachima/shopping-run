@@ -6,13 +6,4 @@ class Item < ApplicationRecord
 
   validates :name, presence: { message: 'Please enter item name' }
   validates :name, uniqueness: { scope: :user_id, case_sensitive: false, message: 'Item already added' }
-
-
-  # include PgSearch::Model
-  # pg_search_scope :search_by_name,
-  #   against: [ :name ],
-  #   using: {
-  #     tsearch: { prefix: true, any_word: true, dictionary: "english" }
-  #   }
-
 end
