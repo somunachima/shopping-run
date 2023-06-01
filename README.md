@@ -9,7 +9,7 @@ This is a simple webapp which people can use to keep track of a shopping list.
 - Login with a Google account
 - Shopping list persists between logins
 
-## Addional Features:
+## Additional Features:
 - Search items on the shopping list
 - Drag and drop items to sort shoppping list
 - Save or unsave an indvidual item on the list
