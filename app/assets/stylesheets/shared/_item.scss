@@ -110,34 +110,9 @@ z-index: 1;
   width: 100%;
 }
 
-.add-btn {
-  display: flex;
-  justify-content: center;
-  background-color: #1B73E9;
-  color: white;
-  font-size: 14px;
-  border-radius: 0.3rem;
-  border: none;
-  width: 150px;
-  height: 47px;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-align: center;
-  padding: 8px 0px;
-  margin-left: 10px;
-
-  a{
-    color: white;
-    text-decoration: none;
-  }
-}
-
-.add-btn:hover {
-  transform: scale(1.02);
-}
-
 .greeting {
   margin-top: 20px;
+  color: #353536;
 }
 
 .delete-all {
