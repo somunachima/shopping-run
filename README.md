@@ -5,7 +5,7 @@ This is a simple webapp which people can use to keep track of a shopping list.
 - Add an item to the shopping list
 - View the whole shopping list
 - Delete an individual item from the shopping list
-- Delete the entire shopping list, with a single button click (without needing to delete each individual item one by one) 
+- Delete the entire shopping list with a single button click (without needing to delete each individual item one by one) 
 - Login with a Google account
 - Shopping list persists between logins
 
@@ -13,6 +13,7 @@ This is a simple webapp which people can use to keep track of a shopping list.
 - Search items on the shopping list
 - Drag and drop items to sort shoppping list
 - Save or unsave an indvidual item on the list
+- View only saved items on a seperate page
 - Unsave all items on the saved list
 - Sign up to make a new account without a Google Account
 
