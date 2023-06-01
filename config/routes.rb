@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   }
 
   resources :items, only: [:new, :index, :create, :destroy]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   resources :items do
     collection do
       get 'destroy_all'
@@ -25,7 +25,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get "dashboard", to: "users#dashboard", as: "dashboard"
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "saved", to: "users#saved", as: "saved"
 end

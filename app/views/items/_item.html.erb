@@ -1,5 +1,4 @@
-<%# <li><%= link_to item.name, items_path(item)  %>
- <div class="item-details">
+<div class="item-details">
   <div class="item-name">
     <% bookmark = current_user.bookmarks.find_by(item: item) %>
     <% if current_user.bookmarks.find_by(item: item).nil? %>
@@ -24,4 +23,4 @@
     data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this item?"},
     class:"fa-solid fa-trash"%>
   </div>
- </div>
+</div>
