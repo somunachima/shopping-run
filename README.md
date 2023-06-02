@@ -55,7 +55,7 @@ rails db:create db:migrate
 ```
 bin/rails s
 ```
-### Go to http://localhost:3000/ to view the app
+- #### Go to http://localhost:3000/ to view the app
 
 ## Thank you!
 Thank you for inviting me to this stage of the process. I really enojoyed building this webapp! I look forward to presenting and discussing it during the interview, and to receiving feedback on what can be improved.
