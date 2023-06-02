@@ -1,3 +1,67 @@
-// Import page-specific CSS files here.
-@import "home";
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
 
+.container-index {
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 900px;
+  min-height: 400px;
+  overflow: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  min-height: 48px;
+  color: #353536;
+}
+
+.items-no {
+  color: #353536;
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+
+  .fa-solid.fa-bag-shopping {
+    font-size: 24px;
+    padding-right: 5px;
+    color: #353536;
+  }
+}
+
+.search-top {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  height: 38px;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.new-top {
+  height: 35px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.greeting {
+  margin-top: 20px;
+  color: #353536;
+}
+
+.delete-all {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.video {
+  border-radius: 0.3rem;
+  width: 100%;
+}
