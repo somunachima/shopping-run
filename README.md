@@ -19,7 +19,7 @@ This is a simple webapp which people can use to keep track of a shopping list.
 
 ## Future Plans
 Besides the issues below, there are few more features I want to build:
-- [ ] Update schema so that users has many lists which has many items which has many bookmarks and users has many bookmarks
+- [ ] Update schema so that users has many lists which has many items which has many bookmarks, and users has many bookmarks
 - [ ] Allow users to add their own profile photo on sign up if they are not using a Google Account
 - [ ] Add a description which toggles down when you click an item card
 - [ ] Add categories to the item's model so that the list can be filtered based on item type (e.g. Groceries, Clothes, Toiletries, Eletronics etc)
