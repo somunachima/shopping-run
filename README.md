@@ -23,8 +23,7 @@ Besides the issues below, there are few more features I want to build:
 - [ ] Add a description which toggles down when you click an item card
 - [ ] Add categories to the item's model so that the list can be filtered based on item type (e.g. Groceries, Clothes, Toiletries, Eletronics etc)
 - [ ] Add a web scraper so that people can search and add items from the internet
-
-# Known Issues
+## Known Issues
 - [ ] Prevent the deletion of the saved list when deleting items from the shopping list
 - [ ] Prevent redirection to shopping list page when unsaving or deleting items on the saved list page
 - [ ] Allow users to add their own profile photo if they are not using a Google Account
