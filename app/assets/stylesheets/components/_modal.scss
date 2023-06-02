@@ -1,3 +1,4 @@
+//MODAL
 .modal {
   position: fixed;
   z-index: 1;
@@ -59,73 +60,7 @@
   }
 }
 
-.google-btn {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.log-btn {
-  display: flex;
-  justify-content: center;
-  background-color: #1B73E9;
-  color: white;
-  font-size: 12px;
-  border-radius: 0.3rem;
-  border: none;
-  width: 100%;
-  height: 30px;
-  text-align: center;
-  margin-bottom: 0px;
-}
-
-.btn.log-btn:hover {
-  background-color: #1765c9 !important;
-  color: white !important;
-}
-
-.sign-btn {
-  display: flex;
-  justify-content: center;
-  background-color: #1B73E9;
-  color: white;
-  font-size: 12px;
-  border-radius: 0.3rem;
-  border: none;
-  width: 100%;
-  height: 30px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.btn.sign-btn:hover {
-  background-color: #1765c9 !important;
-  color: white !important;
-}
-
-.log-link {
-  color: #1B73E9;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-align: center;
-  margin-bottom: 0px;
-  margin-left: 4px;
-}
-
-
-.forgot-btn {
-  color: #1B73E9;
-  font-size: 10px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-align: center;
-  margin-bottom: 5px;
-  margin-left: 3px;
-}
-
+//SIGNUP & LOGIN FORM
 .form-inputs.google {
   font-size: 10px;
 

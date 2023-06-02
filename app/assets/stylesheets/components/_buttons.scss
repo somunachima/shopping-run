@@ -1,0 +1,154 @@
+//SAVE BUTTON
+.save-btn {
+  margin-right: 2px;
+
+  .fa-solid.fa-bookmark {
+    color: #6A696A;
+    font-size: 14px;
+    transition: all 0.3s;
+    text-decoration: none;
+    border: none;
+  }
+
+  .fa-solid.fa-bookmark:hover {
+    color: #1B73E9;
+    font-size: 14px;
+    transition: all 0.3s;
+    text-decoration: none;
+    border: none;
+  }
+
+  .fa-regular.fa-bookmark {
+    color: #6A696A;
+    font-size: 14px;
+    transition: all 0.3s;
+    text-decoration: none;
+    border: none;
+  }
+
+  .fa-regular.fa-bookmark:hover {
+    color: #1B73E9;
+    font-size: 14px;
+    transition: all 0.3s;
+    text-decoration: none;
+    border: none;
+  }
+}
+
+//DELETE BUTTON
+.delete-btn {
+  margin: 0;
+  text-align: right;
+  .fa-solid {
+    color: #6A696A;
+    font-size: 14px;
+    transition: all 0.3s;
+  }
+
+}
+
+//DELETE ALL BUTTON
+.delete-btn:hover {
+  .fa-solid {
+    color: #1B73E9;
+  }
+}
+
+.delete-all-btn {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  width: 100%;
+  height: 35px;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 8px 5px;
+  background-color: none;
+
+  a{
+    color: #6A696A;
+    text-decoration: underline;
+    text-align: right;
+  }
+}
+
+.delete-all-btn:hover {
+  a {
+  color: #1B73E9;
+  }
+}
+
+//SIGN UP & LOGIN MODAL
+.google-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.log-btn {
+  display: flex;
+  justify-content: center;
+  background-color: #1B73E9;
+  color: white;
+  font-size: 12px;
+  border-radius: 0.3rem;
+  border: none;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.btn.log-btn:hover {
+  background-color: #1765c9 !important;
+  color: white !important;
+}
+
+.sign-btn {
+  display: flex;
+  justify-content: center;
+  background-color: #1B73E9;
+  color: white;
+  font-size: 12px;
+  border-radius: 0.3rem;
+  border: none;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn.sign-btn:hover {
+  background-color: #1765c9 !important;
+  color: white !important;
+}
+
+.log-link {
+  color: #1B73E9;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-left: 4px;
+}
+
+.forgot-btn {
+  color: #1B73E9;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-left: 3px;
+}
+
+//SEARCH BAR
+.search-btn {
+  background: none;
+  border: none;
+  width: 0px;
+  display: none;
+}
