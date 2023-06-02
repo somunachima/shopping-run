@@ -20,6 +20,7 @@ This is a simple webapp which people can use to keep track of a shopping list.
 ## Future Plans
 Besides the issues below, there are few more features I want to build:
 - [ ] Update schema so that users can have many lists which have many items which hava many bookmarks
+- [ ] Allow users to add their own profile photo on sign up if they are not using a Google Account
 - [ ] Add a description which toggles down when you click an item card
 - [ ] Add categories to the item's model so that the list can be filtered based on item type (e.g. Groceries, Clothes, Toiletries, Eletronics etc)
 - [ ] Add a web scraper so that people can search and add items from the internet
@@ -27,7 +28,6 @@ Besides the issues below, there are few more features I want to build:
 ### Known Issues
 - Prevent the deletion of the saved list when deleting items from the shopping list
 - Prevent redirection to shopping list page when unsaving or deleting items on the saved list page
-- Allow users to add their own profile photo if they are not using a Google Account
 
 ## Setup:
 - Clone project
