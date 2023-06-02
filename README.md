@@ -26,6 +26,7 @@ Besides the issues below, there are few more features I want to build:
 - [ ] Add a web scraper so that people can search and add items from the internet
 
 ### Known Issues
+- Get the turbo alert to pop up before deleting all items from the shopping list
 - Prevent the deletion of the saved list when deleting items from the shopping list
 - Prevent redirection to shopping list page when unsaving or deleting items on the saved list page
 
