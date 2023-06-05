@@ -11,6 +11,7 @@ This is a simple webapp which people can use to keep track of a shopping list.
 
 ## Additional Features:
 - Search items on the shopping list
+- Filter shopping list based on categories
 - Drag and drop items to sort shoppping list
 - Save or unsave an individual item on the list
 - View only saved items on a seperate page
