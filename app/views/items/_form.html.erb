@@ -4,6 +4,10 @@
   </div>
 
   <div>
+    <%= f.text_field :category, required: true, class: "new-bar", placeholder: "Add a category name", style: "width:100%; color:#616264" %>
+  </div>
+
+  <div>
     <%= f.submit "", class: "add-btn", style: "display:none" %>
   </div>
 <% end %>

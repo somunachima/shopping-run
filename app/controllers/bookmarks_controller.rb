@@ -5,7 +5,6 @@ class BookmarksController < ApplicationController
     if !@bookmark.save
       flash[:notice] = @bookmark
     end
-
     redirect_to items_path, status: :see_other, notice: "Your item has been saved!"
   end
 
