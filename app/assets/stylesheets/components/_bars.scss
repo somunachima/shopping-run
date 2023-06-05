@@ -47,6 +47,27 @@
   z-index: 1;
 }
 
+.category-bar {
+  background-color: #c4c2c2;
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  height: 47px;
+  border-radius: 0.2rem;
+  color: #6D747E;
+  padding-left: 0px;
+  text-indent: 35px;
+  border: none;
+  margin-top: 2px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.category-bar:placeholder-shown {
+  z-index: 1;
+}
+
 .add-icon {
   position: absolute;
   pointer-events: none;

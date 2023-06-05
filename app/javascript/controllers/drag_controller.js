@@ -20,7 +20,7 @@ export default class extends Controller {
 
   drop(event) {
     let parentID = event.target.getAttribute(dataParent);
-    const dropTarget = this.findDropTargetIcon(event.target, parentID);
+    const dropTarget = this.findDropTarget(event.target, parentID);
     const draggedItem = document.querySelector(
       `[data-resource-id="${resourceID}"]`
     );
@@ -78,7 +78,7 @@ export default class extends Controller {
     return element.getAttribute("content");
   }
 
-  findDropTargetIcon(target, parentID) {
+  findDropTarget(target, parentID) {
     if (target === null) {
       return null;
     }
@@ -88,6 +88,7 @@ export default class extends Controller {
     if (target.classList.contains("draggable")) {
       return target;
     }
-    return this.findDropTargetIcon(target.parentElement, parentID);
+    return this.findDropTarget(target.parentElement, parentID);
   }
 }
+ 
