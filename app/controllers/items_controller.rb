@@ -13,7 +13,8 @@ class ItemsController < ApplicationController
   def index
     @item = Item.new
     if params[:query].present?
-      @items = current_user.items.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_subquery = "name ILIKE :query OR category ILIKE :query"
+      @items = current_user.items.where(sql_subquery, query: "%#{params[:query]}%")
     else
       @items = current_user.items.all.order(position: :asc)
     end
