@@ -81,3 +81,5 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "acts_as_list", "~> 1.1"
+gem "cloudinary"
+

@@ -16,4 +16,5 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :bookmarks, dependent: :destroy
+  has_one_attached :photo
 end
