@@ -36,7 +36,6 @@ Besides the issues below, there are few more features I want to build:
 <img width="1728" alt="Screenshot 2023-06-23 at 13 32 18" src="https://github.com/Project-Assignments/project19SA/assets/114405652/29a74341-1407-42c8-833f-8d146e06877c">
 <img width="1728" alt="Screenshot 2023-06-23 at 13 32 33" src="https://github.com/Project-Assignments/project19SA/assets/114405652/0543e288-055d-4e05-bf9c-7db42498c6bf">
 <img width="1728" alt="Screenshot 2023-06-23 at 13 32 45" src="https://github.com/Project-Assignments/project19SA/assets/114405652/d92ca697-db7a-4bee-b6f5-2c2932cd0b81">
-<img width="1728" alt="Screenshot 2023-06-23 at 13 35 04" src="https://github.com/Project-Assignments/project19SA/assets/114405652/6cdf6e0f-a891-44dc-88d2-5e625e423dd2">
 
 ## Setup:
 - Clone project
