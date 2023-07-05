@@ -34,6 +34,11 @@
                       label: false,
                       placeholder: "Confirm Password",
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo,
+                      as: :file,
+                      required: true,
+                      autofocus: true,
+                      label: false %>
         </div>
 
         <div class="form-actions">
