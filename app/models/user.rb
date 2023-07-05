@@ -5,6 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :items
+  has_many :bookmarks, dependent: :destroy
+  has_one_attached :photo
+
+  def avatar_thumbnail
+    avatar.variant(resize: "150x150!").processed
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -13,8 +21,4 @@ class User < ApplicationRecord
       user.avatar_url = auth.info.image
     end
   end
-
-  has_many :items
-  has_many :bookmarks, dependent: :destroy
-  has_one_attached :photo
 end
