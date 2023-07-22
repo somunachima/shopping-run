@@ -32,6 +32,7 @@ Besides the issues below, there are few more features I want to build:
 - Prevent redirection to shopping list page when unsaving or deleting items on the saved list page
 
 ## Preview
+<img width="1728" alt="Screenshot 2023-07-22 at 20 27 45" src="https://github.com/somunachima/shopping-run/assets/114405652/f9d10a39-9256-495f-bc29-22b846fe59b6">
 <img width="1728" alt="Screenshot 2023-06-23 at 13 54 53" src="https://github.com/Project-Assignments/project19SA/assets/114405652/572ff269-2961-458f-99c2-a2faabc1a87e">
 <img width="1728" alt="Screenshot 2023-06-23 at 13 31 18" src="https://github.com/Project-Assignments/project19SA/assets/114405652/03f6d1fe-59ab-4d23-8400-b8e95e5b3ab1">
 <img width="1728" alt="Screenshot 2023-06-23 at 13 32 18" src="https://github.com/Project-Assignments/project19SA/assets/114405652/29a74341-1407-42c8-833f-8d146e06877c">
