@@ -39,4 +39,5 @@ Besides the issues below, there are few more features I want to build:
 <img width="1728" alt="Screenshot 2023-06-23 at 13 32 33" src="https://github.com/Project-Assignments/project19SA/assets/114405652/0543e288-055d-4e05-bf9c-7db42498c6bf">
 <img width="1728" alt="Screenshot 2023-06-23 at 13 32 45" src="https://github.com/Project-Assignments/project19SA/assets/114405652/d92ca697-db7a-4bee-b6f5-2c2932cd0b81">
 <img width="1443" alt="Screenshot 2023-06-23 at 13 37 16" src="https://github.com/Project-Assignments/project19SA/assets/114405652/1067f36e-63ea-416d-b04e-6e38b1f46e9c">
+<img width="1728" alt="Screenshot 2023-06-23 at 13 38 13" src="https://github.com/somunachima/shopping-run/assets/114405652/2f5d7d5c-0b67-4b90-8a29-44b066c90c4e">
 
