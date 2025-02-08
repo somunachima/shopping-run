@@ -32,12 +32,13 @@ Besides the issues below, there are few more features I want to build:
 - Prevent redirection to shopping list page when unsaving or deleting items on the saved list page
 
 ## Preview
-<img width="1728" alt="Screenshot 2023-07-22 at 20 27 45" src="https://github.com/somunachima/shopping-run/assets/114405652/f9d10a39-9256-495f-bc29-22b846fe59b6">
-<img width="1728" alt="Screenshot 2023-06-23 at 13 54 53" src="https://github.com/Project-Assignments/project19SA/assets/114405652/572ff269-2961-458f-99c2-a2faabc1a87e">
-<img width="1728" alt="Screenshot 2023-06-23 at 13 31 18" src="https://github.com/Project-Assignments/project19SA/assets/114405652/03f6d1fe-59ab-4d23-8400-b8e95e5b3ab1">
-<img width="1728" alt="Screenshot 2023-06-23 at 13 32 18" src="https://github.com/Project-Assignments/project19SA/assets/114405652/29a74341-1407-42c8-833f-8d146e06877c">
-<img width="1728" alt="Screenshot 2023-06-23 at 13 32 33" src="https://github.com/Project-Assignments/project19SA/assets/114405652/0543e288-055d-4e05-bf9c-7db42498c6bf">
-<img width="1728" alt="Screenshot 2023-06-23 at 13 32 45" src="https://github.com/Project-Assignments/project19SA/assets/114405652/d92ca697-db7a-4bee-b6f5-2c2932cd0b81">
-<img width="1443" alt="Screenshot 2023-06-23 at 13 37 16" src="https://github.com/Project-Assignments/project19SA/assets/114405652/1067f36e-63ea-416d-b04e-6e38b1f46e9c">
-<img width="1728" alt="Screenshot 2023-06-23 at 13 38 13" src="https://github.com/somunachima/shopping-run/assets/114405652/2f5d7d5c-0b67-4b90-8a29-44b066c90c4e">
+<img width="1728" alt="screen1" src="https://github.com/user-attachments/assets/e9230142-a6f7-439c-9a0c-f24c8a545354" />
+<img width="1728" alt="screen2" src="https://github.com/user-attachments/assets/458e6706-2a75-418e-86d5-3708244543a6" />
+<img width="1728" alt="screen3" src="https://github.com/user-attachments/assets/c37b463a-4211-47cf-a8e4-28d49ac5ce14" />
+<img width="1728" alt="screen4" src="https://github.com/user-attachments/assets/2b1248a6-2345-4ad9-a2ef-884691149dbe" />
+<img width="1728" alt="screen5" src="https://github.com/user-attachments/assets/46569a33-c86a-4285-975a-83b940533d1a" />
+<img width="1728" alt="screen6" src="https://github.com/user-attachments/assets/d51d8fad-94f0-4e49-bba1-1ffdb32c3d8d" />
+<img width="1443" alt="screen7" src="https://github.com/user-attachments/assets/55a6e522-3557-4588-930b-29999bba1756" />
+<img width="1728" alt="screen8" src="https://github.com/user-attachments/assets/1426ac6a-924f-492b-9cd9-ef8c1099f413" />
+
 
